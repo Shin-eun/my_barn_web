@@ -1,5 +1,8 @@
-import { useState } from "react";
+import { useState, useLayoutEffect, useEffect } from "react";
+import { useQuery } from "react-query";
+import { QueryKeys, restfetcher } from "../../queryClient";
 import { Link } from "react-router-dom";
+
 //style
 import * as S from "./OneSpace.styled";
 import * as C from "../../assets/styles/commeStyle";
@@ -13,6 +16,23 @@ import Talble from "../../components/table/Table";
 
 const OneSpace = () => {
     const [addCard, setAddCard] = useState(false);
+
+    // useLayoutEffect(() => {
+    //     getSpaceListApi.refetch();
+    //   }, []);
+
+    // const getSpaceListApi = useQuery(
+    //     QueryKeys.SPACELIST,
+    //     async () =>
+    //       await restfetcher({
+    //         method: "POST",
+    //         path: "barn/space",
+    //         params :{
+    //             userId :,
+    //             barnId :
+    //         }
+    //       })
+    //   );
 
     return (
         <S.OneSpace>

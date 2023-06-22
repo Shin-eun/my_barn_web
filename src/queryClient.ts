@@ -21,7 +21,8 @@ export const getClient = (()=>{
     }
 })();
 
-const BASE_URL = ""
+// export const BASE_URL = "http://52.79.135.198:50000/"
+export const BASE_URL = "http://localhost:4000/"
 
 export const restfetcher = async ({
     method,
@@ -41,12 +42,13 @@ export const restfetcher = async ({
             }
         }
         if (params) fetchOptions.body = JSON.stringify(params);
+        console.log(url, params, fetchOptions);
         const res = await fetch(url, fetchOptions)
         if (!res.ok) {
             throw new Error(`Error! status: ${res.status}`);
         }
         const json = await res.json();
-        console.log(url, params, json);
+        console.log(url, json);
         return json
     } catch (err) {
         console.error(err);
@@ -55,4 +57,10 @@ export const restfetcher = async ({
 
 
 export const QueryKeys = {
+    USERINFO : "USERINFO",
+    BARNLIST : "BARNLIST",
+    BARNNAMECHANGE : "BARNNAMECHANGE",
+    BARNDELETE : "BARNDELETE",
+    ADDABRN : "ADDABRN",
+    SPACELIST : "SPACELIST"
 }

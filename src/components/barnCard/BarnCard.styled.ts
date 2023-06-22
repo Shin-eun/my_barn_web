@@ -26,7 +26,6 @@ export const Name = styled.p`
     line-height:75px;
     font-size:20px;
     color:#000;
-
 `;
 
 export const Btns = styled.div`
